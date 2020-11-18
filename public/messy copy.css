@@ -1,0 +1,545 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
+:root {
+    --padding: 5px;
+    --ledBrightness: 0;
+    --feedbackColor: red;
+    --feedbackTransitionDuration: 1s;
+    --color1:#ec6204;
+    --color2:#11479c;
+    --color3:#ffffff;
+    --progress:0px;
+    --navBarPadding:10px;
+    
+}
+
+.feedbackBox {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    box-shadow: 0px 0px 0px 0px var(--feedbackColor) inset;
+    transition: box-shadow var(--feedbackTransitionDuration);
+}
+
+.feedbackBoxOn {
+    animation-name: feedbackAnimation;
+    animation-duration: 1s;
+}
+
+@keyframes feedbackAnimation {
+    0% {
+        box-shadow: 0px 0px 20vw 10px var(--feedbackColor) inset;
+    }
+    25% {
+        box-shadow: 0px 0px 15vw 00px var(--feedbackColor) inset;
+    }
+    100% {
+        box-shadow: 0px 0px 00px 00px var(--feedbackColor) inset;
+    }
+}
+
+
+/*
+
+*/
+
+.tabContainer{
+    
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+}
+#root {
+    width: 100%;
+    max-width: 800px;
+    height: 100vh;
+    background-color: var(--color3);
+    
+    display: flex;
+    flex-direction: column;
+}
+#all{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+body {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    
+}
+
+.navMenuContainer {
+    background-color: rgb(236, 97, 4);
+    border: medium;
+    padding: 10px;
+    
+    color: #ec6104;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.navMenu {
+    border: 0px solid black;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+    padding: 0px;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    list-style: none;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    --x: 0px;
+    --y: 0px;
+    z-index: 0;
+    --padding: 5px;
+}
+
+.navMenu li {
+    padding: var(--padding);
+    margin: 0px;
+    z-index: 1;
+}
+
+.navMenu li span {
+    z-index: 2;
+}
+
+#selectionNavArea {
+    position: absolute;
+    background-color:white;
+    left: 0px;
+    top: 0px;
+    margin: -1px;
+    height: 10px;
+    width: 10px;
+    border-radius: 20px;
+    border: 1px solid white;
+    -webkit-transform: translate3d(var(--x), var(--y), 0px);
+    transform: translate3d(var(--x), var(--y), 0px);
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -o-transition-property: transform/*,width,height*/
+    ;
+    transition-property: transform/*,width,height*/
+    ;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 0.25s;
+    -o-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    z-index: 1;
+}
+
+.options div,.nerdMode {
+    background-color: #e8e8e8;
+    padding: 0;
+    margin: 0;
+   
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.heandsNerd img {
+    width: calc(100vw/9);
+    max-width: 40px;
+    border-radius: 5px;
+    margin:2px;
+
+
+}
+.nerdModeSwitch{
+    display: flex;
+    justify-content: center;
+    background-color: white!important;
+    border-radius: 20px!important;
+}
+#normalModeLabel{
+    margin-right: 5px;
+    margin-top: 10px;
+}
+.nerdMode details div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+
+}
+
+
+/* DOMRect { x: 28.399993896484375, y: 8, width: 82.65000915527344, 
+  height: 20, top: 8, right: 111.05000305175781, bottom: 28, left: 28.399993896484375 } */
+
+
+/* componente indicatore dell'andamento della prova*/
+
+.indicatorsListContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    overflow: scroll;
+}
+
+.indicatorContainer {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+    border: 1px solid white;
+    padding: 5px;
+    border: 1px solid black;
+    width: 30px;
+    height: 20px;
+    background-color: lightgray;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.finger {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    width: 1px;
+}
+
+.up {
+    height: 100%;
+}
+
+.down {
+    height: 5px
+}
+
+.space {
+    background-color: black;
+}
+
+.correct {
+    background-color: greenyellow;
+}
+
+.wrong {
+    background-color: red;
+}
+
+.correct div {
+    background-color: black;
+}
+
+.infoLed {
+    background-color: var(--color3);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/* led*/
+
+.led {
+    z-index: 1000;
+    margin: 20px;
+    border-radius: 100%;
+    background-color: black;
+    position: relative;
+    /*top:-40px;*/
+    /* right: -40%;*/
+}
+
+.led {
+    filter: brightness(var(--ledBrightness));
+    --neon-border-color: red;
+    --glowSize: 6px;
+    background-color: red;
+    -webkit-box-shadow: 0 0 var(--glowSize) #fff, inset 0 0 var(--glowSize) #fff, 0 0 calc(var(--glowSize)/2) var(--neon-border-color), inset 0 0 calc(var(--glowSize)/2) var(--neon-border-color), 0 0 calc(var(--glowSize)/1.5) var(--neon-border-color), inset 0 0 calc(var(--glowSize)/1.5) var(--neon-border-color);
+    box-shadow: 0 0 var(--glowSize) #fff, inset 0 0 var(--glowSize) #fff, 0 0 calc(var(--glowSize)/2) var(--neon-border-color), inset 0 0 calc(var(--glowSize)/2) var(--neon-border-color), 0 0 calc(var(--glowSize)/1.5) var(--neon-border-color), inset 0 0 calc(var(--glowSize)/1.5) var(--neon-border-color);
+}
+
+.ledSmall {
+    width: 6px;
+    height: 6px;
+}
+
+.ledBig {
+    width: 12px;
+    height: 12px;
+}
+
+.ledContainer {
+    display: flex;
+    flex-direction: row;
+    max-width: 200px;
+}
+
+.onSoft {
+    --neon-border-color: rgb(128, 1, 1);
+    --glowSize: 6px;
+    background-color: var(--neon-border-color);
+    -webkit-box-shadow: 0 0 var(--glowSize) #fff, inset 0 0 var(--glowSize) #fff, 0 0 calc(var(--glowSize)/2) var(--neon-border-color), inset 0 0 calc(var(--glowSize)/2) var(--neon-border-color), 0 0 calc(var(--glowSize)/1.5) var(--neon-border-color), inset 0 0 calc(var(--glowSize)/1.5) var(--neon-border-color);
+    box-shadow: 0 0 var(--glowSize) #fff, inset 0 0 var(--glowSize) #fff, 0 0 calc(var(--glowSize)/2) var(--neon-border-color), inset 0 0 calc(var(--glowSize)/2) var(--neon-border-color), 0 0 calc(var(--glowSize)/1.5) var(--neon-border-color), inset 0 0 calc(var(--glowSize)/1.5) var(--neon-border-color);
+}
+.buttonsWrapper{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+}
+.trainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 2;
+    
+    
+}
+
+.buttons button {
+    font-size: 20px;
+}
+
+
+/* Buttons*/
+
+.buttons {
+    background-color: var(--color3);
+    flex-wrap: wrap;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.buttons span {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.buttons div:focus {
+    background-color: gray;
+}
+
+.buttons div {
+    border: 2px solid orangered;
+    width: 33px;
+    height: 33px;
+    margin: 3px;
+}
+
+.button:active {
+    background-color: blanchedalmond;
+    transform: scale(0.9);
+}
+
+
+/*mani*/
+
+.heandShow {
+    height: 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: var(--color3);
+}
+
+.heandsWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 450px;
+    overflow: hidden;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+}
+
+.bpmIndicator {
+    align-self: center;
+    background-color: white;
+    margin: 5px;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.heandsWrapper img {
+    max-height: 220px;
+    object-fit: contain;
+}
+
+.heandsAnimation {
+    -webkit-animation: heandsAnimation var(--heandsAnimationDuration) 1;
+    animation: heandsAnimation var(--heandsAnimationDuration) 1;
+    -webkit-animation-duration: var(--heandsAnimationDuration);
+    animation-duration: var(--heandsAnimationDuration);
+    -webkit-animation-delay: var(--heandsAnimationDelay);
+    animation-delay: var(--heandsAnimationDelay);
+}
+
+@-webkit-keyframes heandsAnimation {
+    0% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+    }
+    25% {
+        -webkit-transform: translate3d(0px, -38px, 0px);
+        transform: translate3d(0px, -38px, 0px);
+        -webkit-animation-timing-function: ease-in, ease-in-out;
+        animation-timing-function: ease-in, ease-in-out;
+    }
+    100% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+    }
+}
+
+@keyframes heandsAnimation {
+    0% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+    }
+    25% {
+        -webkit-transform: translate3d(0px, -38px, 0px);
+        transform: translate3d(0px, -38px, 0px);
+        -webkit-animation-timing-function: ease-in, ease-in-out;
+        animation-timing-function: ease-in, ease-in-out;
+    }
+    100% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+    }
+}
+.statsTable{
+    width: 99%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.statsItem{
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    justify-content: center;
+    background-color: #e8e8e8;
+    margin: 5px;
+  
+    border-radius: 5px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+.statsItem> *{
+    margin: 5px;
+}
+
+/*drum button*/
+
+.drum img {
+    width: 97%;
+    min-height: 100px;;
+   
+    border-radius: 5px;
+    margin: 5px 0px;
+    margin-bottom: 0px;
+    flex-grow: 2;
+}
+
+
+
+.drum {
+   
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-grow: 2;
+}
+#bpmRange{
+    width: 90%;
+}
+
+.drum img {
+    height:auto;
+    display:block;
+    
+}
+.drum img:active {
+    animation-name: drumFeedback;
+  animation-duration: 0.03s;
+}
+@keyframes drumFeedback {
+    0%   {filter:brightness(50%);}
+    75%  {filter:brightness(50%);}
+    100% {filter:brightness(100%);}
+  }
+  .heandsNerd{
+    margin:2px!important;
+    padding:0;
+    border:1px solid black
+}

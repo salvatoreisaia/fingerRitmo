@@ -1,0 +1,15 @@
+:root{
+  --feedbackColor:red;
+}
+.feedbackBoxTop{
+  box-shadow: 20px 20px 20px 20px var(--feedbackColor) inset;
+
+
+}
+.feedbackBoxBottom{
+
+
+}
+/*
+
+*/

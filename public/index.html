@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="it">
+<meta charset="utf-8">
+<!--
+  <!doctype html><html lang="it"><script>var body,debugActive=false;
+
+    <?php
+    if (isset($_GET["debug"])) {
+        echo "debugActive=". $_GET['debug'].";";
+    }
+    ?>
+-->
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDs5gTm3NolEP5kwmqcvCu8l5jo_yLXqzo",
+    authDomain: "errorreport-ffa84.firebaseapp.com",
+    databaseURL: "https://errorreport-ffa84.firebaseio.com",
+    projectId: "errorreport-ffa84",
+    storageBucket: "errorreport-ffa84.appspot.com",
+    messagingSenderId: "835960996112",
+    appId: "1:835960996112:web:459f7697df6b6a79da6595"
+  };
+  // Initialize Firebase
+  var sessionId = (1 + Math.random() * 4294967295).toString(16);
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore();
+  var storage = firebase.storage();
+  var storageRef = storage.ref();
+
+
+
+
+  /*
+    function printInVirtualConsole(text, consoleType) {
+      debugOutput.push({ color: consoleType, text: text });
+      text=JSON.stringify(text)
+      var data=consoleType==="warn"?{
+        origin:text.split("\n")[0],
+        text:text,
+        consoleType:consoleType
+      }:{
+  
+        text:text,
+        consoleType:consoleType
+      };
+      db.collection("SessionReports")
+      .doc(navigator.oscpu+" "+sessionId)
+      .collection('consoleOutputs')
+      .doc(Math.floor(Date.now()).toString()).set(
+        data)
+    }*/
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<script>
+
+</script>
+<script>/*
+var debugActive = window.location.href.includes("debug=true");
+// paste first comment here
+var body
+var debugOutput = []
+
+if (debugActive === true) {
+var console = (function (oldCons) {
+return {
+  log: function (text) {
+    oldCons.log(text);
+    printInVirtualConsole(text, "log")
+  },
+  info: function (text) {
+    oldCons.info(text);
+    printInVirtualConsole(text, "info")
+  },
+  warn: function (text) {
+    oldCons.warn(text);
+    printInVirtualConsole(text, "warn")
+  },
+  error: function (text) {
+    oldCons.error(text);
+    printInVirtualConsole(text, "error")
+  }
+
+};
+}(window.console));
+
+//Then redefine the old console
+window.console = console;
+}
+*/
+
+</script>
+<link rel="preload" as="script" href="https://cdn.iubenda.com/cs/iubenda_cs.js" />
+<link rel="preconnect" href="https://www.iubenda.com" />
+<link rel="preconnect" href="https://iubenda.mgr.consensu.org" />
+<link rel="preconnect" href="https://hits-i.iubenda.com" />
+<link rel="preload" as="script" href="https://cdn.iubenda.com/cs/tcf/stub-v2.js" />
+<script src="https://cdn.iubenda.com/cs/tcf/stub-v2.js"></script>
+<script>
+  (_iub = self._iub || []).csConfiguration = {
+    cookiePolicyId: 87639035,
+    siteId: 2063341,
+    localConsentDomain: 'fingerritmo.altervista.org',
+    timeoutLoadConfiguration: 30000,
+    lang: 'it',
+    enableTcf: true,
+    tcfVersion: 2,
+    googleAdditionalConsentMode: true,
+    consentOnContinuedBrowsing: false,
+    banner: {
+      position: "bottom",
+      acceptButtonDisplay: true,
+      customizeButtonDisplay: true,
+      closeButtonDisplay: false,
+      fontSizeBody: "14px",
+    },
+  }
+</script>
+<script async src="//cdn.iubenda.com/cs/iubenda_cs.js"></script>
+
+<style>
+  @media (max-width: 639px) {
+    #iubenda-cs-banner.iubenda-cs-default .iubenda-cs-rationale {
+      height: 55vh !important;
+      min-height: 320px !important;
+    }
+  }
+</style>
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F6CB0NXZXL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-F6CB0NXZXL');
+//disabilita misure
+    window['ga-disable-GA_MEASUREMENT_ID'] = true;
+  </script>-->
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/style0.6.css" />
+
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta name="theme-color" content="#000000" />
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+  </style>
+
+
+  <meta name="description" content="Ritmo app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>React App</title>
+</head>
+<script src="%PUBLIC_URL%/metronome.js"></script>
+
+<body id="body">
+  <!--copatibility detection-->
+
+  <script src="https://cdn.jsdelivr.net/npm/bowser@2.5.3/es5.min.js"></script>
+  <script>
+    var deviceData
+    try {
+      const browser = bowser.getParser(window.navigator.userAgent);
+      deviceData = browser.parsedResult
+    } catch (error) {
+      console.error(error)
+      alert("your device might be uncompatible with FingerRitmo, if you experience any problem send a feedback with the form you find at the bottom of the page")
+
+    }
+
+
+    function isCompatible(UserData) {
+      var output = false;
+      if (UserData.os.name === "Android") {
+        if (parseVersion(UserData.browser.version) >= 6) {
+          return true
+        }
+      }
+      if (UserData.browser.name === "Safari") {
+        if (parseVersion(UserData.browser.version) >= 10) {
+          return true
+        }
+      }
+      if (UserData.browser.name === "Chrome") {
+        if (parseVersion(UserData.browser.version) >= 64) {
+          return true
+        }
+      }
+      if (UserData.browser.name === "Firefox") {
+        if (parseVersion(UserData.browser.version) >= 65) {
+          return true
+        }
+      }
+      if (UserData.browser.name === "Microsoft Edge") {
+        if (parseVersion(UserData.browser.version) >= 86) {
+          return true
+        }
+      } "Microsoft Edge"
+      return output
+
+    }
+    function parseVersion(version) {
+      return parseInt(version.split(".")[0])
+    }
+    if (!isCompatible(deviceData) || !isCompatible(deviceData) === undefined) {
+      alert("your device might be uncompatible with FingerRitmo, if you experience any problem send a feedback with the form you find at the bottom of the page")
+    }
+    //...
+  </script>
+  <!-- oncontextmenu="return false;"  -->
+  <div id="ads">
+    <button onclick="closeAd()">x</button>
+    <script>
+
+      !function (d, l, e, s, c) { e = d.createElement("script"); e.src = "//ad.altervista.org/js.ad/size=300X250/?ref=" + encodeURIComponent(l.hostname + l.pathname) + "&r=" + Date.now(); s = d.scripts; c = d.currentScript || s[s.length - 1]; c.parentNode.insertBefore(e, c) }(document, location)</script>
+    <script> var ad = document.querySelector("#ads")
+      function closeAd() {
+        ad.style.display = "none"
+      }</script>
+  </div>
+
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <footer>
+    <a href="https://www.iubenda.com/privacy-policy/87639035" rel="noreferrer nofollow" target="_blank">Privacy
+      Policy</a>
+     <a href="#" role="button" class="iubenda-advertising-preferences-link">Personalizza tracciamento pubblicitario</a>
+  </footer>
+  <details id="feedbackArea">
+    <summary>Leave a feedback</summary>
+    <br><br>
+    <form id="feedbackForm">
+      <label for="feedbackText">Describe the problem or leave a comment:</label><br><br>
+      <textarea type="text" id="feedbackText" name="feedbackText"></textarea><br><br>
+      <label for="screenshot">Upload a screenshot:</label>
+      <input type="file" id="screenshot" name="screenshot" accept="image/*"><br><br>
+      <img id="preview"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+    
+  </details>
+  <style>
+    #feedbackText {
+      display: block;
+      width: 90%;
+      height: 3rem;
+    }
+
+    #preview {
+      max-width: 100px;
+    }
+    #feedbackArea{
+      margin: 1rem 3px;
+      padding: 1rem;
+      border-radius: 10px;
+      background-color:#e8e8e8 ;
+    }
+  </style>
+  <script>
+    var feedbackForm = document.querySelector("#feedbackForm")
+    var previewElement = document.querySelector("#preview")
+    var feedBackData = {}
+    var feedBackObject = {}
+    feedbackForm.onsubmit = (e) => {
+      let file = e.target[1].files[0]
+      let extention = file.type.split("/").pop()
+      e.preventDefault();
+      feedBackObject.sessionId = sessionId
+      feedBackObject.deviceInfo = deviceData
+      feedBackObject.screenshotName = sessionId + "." + extention
+      feedBackObject.timestamp = new Date()
+      feedBackObject.text= e.target[0].value
+      var imagesRef = storageRef.child('screenshots/' + sessionId + "." + extention);
+      previewElement.src = URL.createObjectURL(file);
+
+      feedBackData = new FormData(feedbackForm)
+      try {
+        imagesRef.put(file).then(function (snapshot) {
+          console.log('Uploaded a blob or file!');
+        });
+        db.collection("SessionReports")
+      .doc(sessionId+"."+feedBackObject.timestamp).set(
+        feedBackObject)
+      } catch (error) {
+        console.error("feedback submit error, line 306 of index.html ",error);
+      }
+
+      console.log(e)
+      window.e = e
+    };
+    createFeedBackObject = (fbdata) => {
+      feedBackData.deviceData = deviceData
+      feedBackData.feedbackText = fbdata.get("feedbackText")
+      return feedBackData
+    }
+
+  </script>
+
+</body>
+
+
+
+
+
+</html>

@@ -1,0 +1,52 @@
+sitema di pubblicità
+    crea un componente che mostra la pubblicità a comando
+ricorda di togliere il silenzioso dagli iphone
+analytics manuali: se esiste un cookie consent contenente yes attiva cookie di tracciamento. Monitora cambiamento cookies
+tasto reset settings   
+sitema di raccolta del feedback automatico:
+    dai un fb quando inviato con successo
+   
+aggiungi android browser and samsung browser al check  
+ metti altezza minima in stats   
+
+bug:
+  
+    in versione 64 di chrome le mani in nerdmode sono sformate
+
+
+
+
+
+se la pagina si carica con il top menu in secondo piano il tasto bianco non si posiziona
+bug:   
+    se la pagina si carica con il top menu in secondo piano il tasto bianco non si posiziona
+    *se metti pausa quando sta cambiando configurazione si incasina
+    *l'animazione può avvenire solo in multipli di 4 ottavi
+
+
+alert: https://sweetalert2.github.io/
+elimina code mozzate in suoni
+*schermo intero 
+*non spegnere schermo quando training attivo*
+tasti: fascione grigio con tasti arancioni
+
+
+
+
+
+opzioni:  
+    *numero mani
+    *tempo di esecuzione: 1/4 per mano
+    *scegli le configuarazioni da cui attingere
+    
+*opzioni per nerd:
+    scegli tra tutte le configurazioni possibili
+
+*opzioni accessibili durante l'allenamento:
+    aiuto metrnomo e bpm
+
+*il metronomo e il bpm cambiano in corsa: usa in modo saggio i setters*
+*il suono del metronomo viene attivato o disattivato in corsa*
+
+refactory:
+runningState sposta in globalState
